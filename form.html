@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulir Pendaftaran</title>
+</head>
+<body>
+  <header>
+    <img src="logoajj.png" alt="Logo" class="logo" width="100px" height="100px">
+    <h1>Formulir Pendaftaran</h1>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+        <button class="hamburger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="form.html">Formulir</a></li>
+          <li><a href="table.html">Tabel</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <form action="table.html" method="get" id="registrationForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required><br>
+        <label for="tanggalLahir">Tanggal Lahir:</label>
+        <input type="date" id="tanggalLahir" name="tanggalLahir" required><br>
+        <label for="alamat">Alamat:</label>
+        <textarea id="alamat" name="alamat" required></textarea><br>
+        <label for="sosmed">Akun Social Media:</label>
+        <input type="text" id="sosmed" name="sosmed" required><br>
+        <label for="pengalaman">Pengalaman di Dunia Entertain:</label>
+        <select id="pengalaman" name="pengalaman" required>
+          <option value="pernah">Pernah</option>
+          <option value="tidak">Tidak Pernah</option>
+        </select><br>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </div>
+  <footer>
+    <p>&copy; 2023 ADDIN Jaya Jaya</p>
+  </footer>
+</body>
+
+<script src="./script.js"></script>
+
+</html>

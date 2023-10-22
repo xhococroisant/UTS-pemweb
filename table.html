@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tabel Pendaftaran</title>
+</head>
+<body>
+  <header>
+    <img src="logoajj.png" alt="Logo" class="logo" width="100px" height="100px>
+    <h1>Tabel Pendaftaran</h1>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+        <button class="hamburger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+  </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="form.html">Formulir</a></li>
+          <li><a href="table.html">Tabel</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <table id="pendaftaranTable">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Alamat</th>
+            <th>Akun Social Media</th>
+            <th>Pengalaman</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data akan dimuat di sini oleh JavaScript -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+  <footer>
+    <p>&copy; 2023 ADDIN Jaya Jaya</p>
+  </footer>
+</body>
+
+<script src="./script.js"></script>
+<script>
+
+    function displayData() {
+    // Dapatkan data dari Local Storage
+    let existingData = localStorage.getItem('userData');
+    let userData = existingData ? JSON.parse(existingData) : [];
+
+    // Pilih elemen tabel
+    let table = document.getElementById('user-table');
+
+    // Tambahkan setiap item di array ke tabel
+    userData.forEach((user) => {
+        let row = table.insertRow();
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        // ... tambahkan sel lainnya ...
+
+        cell1.textContent = user.nama;
+        cell2.textContent = user.tanggalLahir;
+        // ... set nilai sel lainnya ...
+    });
+    }
+
+    // Panggil fungsi saat halaman dimuat
+    window.onload = displayData;
+
+</script>
+
+</html>
